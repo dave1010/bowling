@@ -44,7 +44,7 @@ class Game
     }
 
     /**
-     * @param $frameIndex
+     * @param int $frameIndex
      * @return bool
      */
     protected function isSpare($frameIndex)
@@ -53,7 +53,7 @@ class Game
     }
 
     /**
-     * @param $frameIndex
+     * @param int $frameIndex
      * @return bool
      */
     protected function isStrike($frameIndex)
@@ -62,7 +62,7 @@ class Game
     }
 
     /**
-     * @param $frameIndex
+     * @param int $frameIndex
      * @return mixed
      */
     protected function strikeBonus($frameIndex)
@@ -71,7 +71,7 @@ class Game
     }
 
     /**
-     * @param $frameIndex
+     * @param int $frameIndex
      * @return mixed
      */
     protected function spareBonus($frameIndex)
