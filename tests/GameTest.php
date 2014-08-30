@@ -41,9 +41,24 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(16, $this->game->score());
     }
 
+
+    public function testOneStrike()
+    {
+        $this->rollSrike();
+        $this->game->roll(3);
+        $this->game->roll(4);
+        $this->rollMany(16, 0);
+        $this->assertEquals(24, $this->game->score());
+    }
+
     protected function rollSpare()
     {
         $this->game->roll(5);
         $this->game->roll(5);
+    }
+
+    protected function rollSrike()
+    {
+        $this->game->roll(10);
     }
 }
