@@ -13,6 +13,14 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->game = new Game;
     }
 
+    private function rollMany($n, $pins)
+    {
+        for ($i = 0; $i < $n; $i++) {
+            $this->game->roll($pins);
+        }
+
+    }
+
     public function testGutterGame()
     {
         $this->rollMany(20, 0);
@@ -25,11 +33,17 @@ class GameTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(20, $this->game->score());
     }
 
-    private function rollMany($n, $pins)
+    public function testOneSpare()
     {
-        for ($i = 0; $i < $n; $i++) {
-            $this->game->roll($pins);
-        }
+        $this->rollSpare();
+        $this->game->roll(3);
+        $this->rollMany(17, 0);
+        $this->assertEquals(16, $this->game->score());
+    }
 
+    protected function rollSpare()
+    {
+        $this->game->roll(5);
+        $this->game->roll(5);
     }
 }
