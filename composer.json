@@ -1,5 +1,7 @@
 {
     "name": "dave1010/bowling",
+    "description": "Bownling Game Kata",
+    "license": "MIT",
     "authors": [
         {
             "name": "Dave Hulbert",
